@@ -4,10 +4,10 @@ Summary:	FTE Text Editor (programmer oriented)
 Name:		fte
 Epoch:		1
 Version:	0.50
-Release:	%mkrel 0.%{cvssnap}.4
+Release:	%mkrel 0.%{cvssnap}.5
 Source:		http://fte.sourceforge.net/fte/%{name}-cvs-%{cvssnap}.tar.bz2
-Patch0:		%{name}-20040412-rpmopt.patch.bz2
-Patch1:		%{name}-20040412-slang.patch.bz2
+Patch0: 	fte-20040412-rpmopt.patch
+Patch1: 	fte-slang2_compat.patch
 License:	GPL
 Group:		Editors
 URL:		http://fte.sourceforge.net/
@@ -26,8 +26,8 @@ compiler execution.
 
 %prep
 %setup -q -n fte
-%patch0 -p0
-%patch1 -p1 -b .slang
+%patch0 -p0 -b .rpmopt
+%patch1 -p1 -b .slang2_compat
 
 %build
 make PREFIX=%{_prefix}
@@ -35,13 +35,6 @@ make PREFIX=%{_prefix}
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std INSTALL_NONROOT=1 PREFIX=%{buildroot}%{_prefix}
-
-mkdir -p %{buildroot}/%{_menudir}
-cat << EOF > %{buildroot}/%{_menudir}/%{name}
-?package(%name):command="%{_bindir}/%name"\
- icon="editors_section.png" needs="X11" section="More Applications/Editors"\
- title="FTE" longtitle="FTE Text Editor" xdg="true"
-EOF
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -54,7 +47,6 @@ Terminal=false
 Type=Application
 Categories=X-MandrivaLinux-MoreApplications-Editors;TextEditor;
 EOF
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -71,5 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(0644,root,root,0755)
 %doc README COPYING Artistic CHANGES HISTORY TODO BUGS doc/*.html
 %{_libdir}/fte
-%{_libdir}/menu/*
 %{_datadir}/applications/*
+
