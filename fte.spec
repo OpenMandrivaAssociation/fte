@@ -8,6 +8,7 @@ Release:	%mkrel 0.%{cvssnap}.5
 Source:		http://fte.sourceforge.net/fte/%{name}-cvs-%{cvssnap}.tar.bz2
 Patch0: 	fte-20040412-rpmopt.patch
 Patch1: 	fte-slang2_compat.patch
+Patch2: 	fte-lib64.patch
 License:	GPL
 Group:		Editors
 URL:		http://fte.sourceforge.net/
@@ -28,6 +29,9 @@ compiler execution.
 %setup -q -n fte
 %patch0 -p0 -b .rpmopt
 %patch1 -p1 -b .slang2_compat
+%if %{_lib} == lib64
+%patch2 -p1 -b .lib64
+%endif
 
 %build
 make PREFIX=%{_prefix}
