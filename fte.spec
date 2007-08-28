@@ -4,7 +4,7 @@ Summary:	FTE Text Editor (programmer oriented)
 Name:		fte
 Epoch:		1
 Version:	0.50
-Release:	%mkrel 0.%{cvssnap}.6
+Release:	%mkrel 0.%{cvssnap}.7
 Source:		http://fte.sourceforge.net/fte/%{name}-cvs-%{cvssnap}.tar.bz2
 Patch0: 	fte-20040412-rpmopt.patch
 Patch1: 	fte-slang2_compat.patch
@@ -44,12 +44,12 @@ mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=%{name}
-Comment=%{Summary}
+Comment=FTE Text Editor (programmer oriented)
 Exec=%{name}
 Icon=editors_section.png
 Terminal=false
 Type=Application
-Categories=X-MandrivaLinux-MoreApplications-Editors;TextEditor;
+Categories=Utility;TextEditor;
 EOF
 
 %clean
@@ -68,4 +68,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README COPYING Artistic CHANGES HISTORY TODO BUGS doc/*.html
 %{_libdir}/fte
 %{_datadir}/applications/*
-
