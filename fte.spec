@@ -46,7 +46,7 @@ cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 Name=%{name}
 Comment=FTE Text Editor (programmer oriented)
 Exec=%{name}
-Icon=editors_section.png
+Icon=editors_section
 Terminal=false
 Type=Application
 Categories=Utility;TextEditor;
