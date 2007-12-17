@@ -12,7 +12,6 @@ Patch2: 	fte-lib64.patch
 License:	GPL
 Group:		Editors
 URL:		http://fte.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libgpm-devel
 BuildRequires:	libncurses-devel
 BuildRequires:	libslang-devel
