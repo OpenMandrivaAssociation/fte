@@ -4,7 +4,7 @@ Summary:	FTE Text Editor (programmer oriented)
 Name:		fte
 Epoch:		1
 Version:	0.50
-Release:	%mkrel 0.%{cvssnap}.7
+Release:	%mkrel 0.%{cvssnap}.8
 Source:		http://fte.sourceforge.net/fte/%{name}-cvs-%{cvssnap}.tar.bz2
 Patch0: 	fte-20040412-rpmopt.patch
 Patch1: 	fte-slang2_compat.patch
