@@ -16,7 +16,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libgpm-devel
 BuildRequires:	libncurses-devel
 BuildRequires:	libslang-devel
-BuildRequires:	X11-devel
+BuildRequires:	libx11-devel
 
 %description
 FTE is a Text Mode text editor for xterm sessions.  Color syntax highlighting
