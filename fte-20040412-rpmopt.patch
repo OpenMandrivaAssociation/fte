@@ -1,0 +1,28 @@
+Index: src/fte-unix.mak
+===================================================================
+RCS file: /cvsroot/fte/fte/src/fte-unix.mak,v
+retrieving revision 1.20
+diff -u -r1.20 fte-unix.mak
+--- src/fte-unix.mak	21 Jan 2004 21:59:39 -0000	1.20
++++ src/fte-unix.mak	12 Apr 2004 13:58:09 -0000
+@@ -136,10 +136,7 @@
+ LIBDIR   =
+ INCDIR   =
+ 
+-OPTIMIZE = -g # -O -g
+-#OPTIMIZE = -O2
+-#OPTIMIZE = -O2 -s
+-
++OPTIMIZE = $(RPM_OPT_FLAGS)
+ CCFLAGS  = $(OPTIMIZE) $(I18NOPTIONS) $(APPOPTIONS) $(COPTIONS) -DUNIX $(UOS) $(INCDIR) $(XINCDIR) $(QINCDIR) $(MINCDIR) $(SINCDIR)
+ LDFLAGS  = $(OPTIMIZE) $(LIBDIR) $(XLIBDIR) $(QLIBDIR) $(MLIBDIR)
+ 
+@@ -169,7 +166,7 @@
+ .cpp.moc:
+ 	$(MOC) $< -o $@
+ 
+-all:    cfte $(TARGETS)
++all:    cfte defcfg.h $(TARGETS)
+ #rm -f fte ; ln -s $(PRIMARY) fte
+ 
+ cfte: cfte.o s_files.o s_string.o
