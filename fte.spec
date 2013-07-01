@@ -1,6 +1,6 @@
 %define cvssnap 20040412
 
-Summary:	FTE Text Editor (programmer oriented)
+Summary:	Text Editor (programmer oriented)
 Name:		fte
 Epoch:		1
 Version:	0.50
