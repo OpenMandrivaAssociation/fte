@@ -9,7 +9,7 @@ Source0:	http://fte.sourceforge.net/fte/%{name}-cvs-%{cvssnap}.tar.xz
 Patch2: 	fte-lib64.patch
 License:	GPL
 Group:		Editors
-URL:		http://fte.sourceforge.net/
+URL:		https://fte.sourceforge.net/
 BuildRequires:	libgpm-devel
 BuildRequires:	pkgconfig(ncurses)
 BuildRequires:	pkgconfig(slang)
